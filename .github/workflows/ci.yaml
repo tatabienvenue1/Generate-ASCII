@@ -1,6 +1,7 @@
 name: Generate Ascii Artwork
 
-on: push
+on: 
+    push
 
 jobs:
     ascii_job:
@@ -13,7 +14,7 @@ jobs:
               run: sudo apt-get install cowsay -y
 
             - name: Execute cowsay CMD
-              run: cowsay -f dragon "Run for cover, I am a DRAGON ..RAWR" >> dragon.txt
+              run: cowsay -f dragon "Run for cover, I am a DRAGON ...RAWR" >> dragon.txt
 
             - name: Test File Exists
               run: grep -i "dragon" dragon.txt
@@ -22,4 +23,4 @@ jobs:
               run: cat dragin.txt
 
             - name: Checkout Repo Files
-              run: ls
+              run: ls -ltra
